@@ -5,7 +5,7 @@
 <p align="center"><a href="https://t.me/DESISWAGGERHU"><img src="https://graph.org/file/ae522353ddffb830dd83e.jpg" width="400"></a></p>
 
 
-> ⭐️ Thanks to everyone for using this op XBOTS. That is the greatest pleasure we have !
+> ⭐️ Thanks to everyone for using this op ™°‌ 🫧 🇴 🇽 𝐘 𝐆 𝐄 𝐍. That is the greatest pleasure we have !
 
 
 # ᴅᴇᴘʟᴏʏᴍᴇɴᴛ
