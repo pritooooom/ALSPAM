@@ -14,8 +14,8 @@ HELP_BUTTON = [
       Button.inline("• ᴇxᴛʀᴀ •", data="extra")
     ],
     [
-      Button.url("• ᴄʜᴀɴɴᴇʟ •", "https://t.me/DESISWAGGERHU"),
-      Button.url("• sᴜᴘᴘᴏʀᴛ •", "https://t.me/DESISWAGGERHU")
+      Button.url("• ᴄʜᴀɴɴᴇʟ •", "https://t.me/BWANDARLOK"),
+      Button.url("• sᴜᴘᴘᴏʀᴛ •", "https://t.me/BWANDARLOK")
     ]
   ]
 
@@ -60,7 +60,7 @@ extra_msg = f"""
   2) {hl}leave : Type in the Group bot will auto leave that group
 
 
-**© @PyXen**
+**© @PRADHAN474**
 """
 
                  
@@ -136,8 +136,8 @@ async def helpback(event):
                 Button.inline("• ᴇxᴛʀᴀ •", data="extra")
               ],
               [
-                Button.url("• ᴄʜᴀɴɴᴇʟ •", "https://t.me/DESISWAGGERHU"),
-                Button.url("• sᴜᴘᴘᴏʀᴛ •", "https://t.me/DESISWAGGERHU")
+                Button.url("• ᴄʜᴀɴɴᴇʟ •", "https://t.me/BWANDARLOK"),
+                Button.url("• sᴜᴘᴘᴏʀᴛ •", "https://t.me/BWANDARLOK")
               ]
             ]
           )
