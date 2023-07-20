@@ -7,15 +7,15 @@ HELP_STRING = f"★ ™°‌ 🫧 🇴 🇽 𝐘 𝐆 𝐄 𝐍 𝙃𝙚𝙡𝙥
 
 HELP_BUTTON = [
     [
-      Button.inline("• ꜱᴘᴀᴍ🧐 •", data="spam"),
-      Button.inline("• ʀᴀɪᴅ🥵 •", data="raid")
+      Button.inline("🔥 ꜱᴘᴀᴍ 🔥", data="spam"),
+      Button.inline("🥵 ʀᴀɪᴅ 🥵", data="raid")
     ],
     [
       Button.inline("• ᴇxᴛʀᴀ🥳 •", data="extra")
     ],
     [
-      Button.url("• ᴅᴇᴠᴇʟᴏᴘᴇʀ😎 •", "https://t.me/PRADHAN474"),
-      Button.url("• sᴜᴘᴘᴏʀᴛ🚀 •", "https://t.me/BWANDARLOK")
+      Button.url("🥀 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🥀", "https://t.me/PRADHAN474"),
+      Button.url("✨ sᴜᴘᴘᴏʀᴛ ✨", "https://t.me/BWANDARLOK")
     ]
   ]
 
