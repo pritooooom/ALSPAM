@@ -11,7 +11,7 @@ HELP_BUTTON = [
       Button.inline("🌺 𝚁𝚊𝚒𝙳 🌺", data="raid")
     ],
     [
-      Button.inline("💫 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚂 💫", data="extra")
+      Button.inline("💘 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚂 💘", data="extra")
     ],
     [
       Button.url("🍁 𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚁 🍁", "https://t.me/PRADHAN474"),
@@ -129,15 +129,15 @@ async def helpback(event):
             HELP_STRING,
             buttons=[
               [
-                Button.inline("✨ 𝚂𝚙𝚊𝙼 ✨", data="spam"),
-                Button.inline("🥀 𝚁𝚊𝚒𝙳 🥀", data="raid")
+                Button.inline("🌸 𝚂𝚙𝚊𝙼 🌸", data="spam"),
+                Button.inline("🌺 𝚁𝚊𝚒𝙳 🌺", data="raid")
               ],
               [
-                Button.inline("🔥᪵᪳ 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚂 🔥᪵᪳", data="extra")
+                Button.inline("💖 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚂 💖", data="extra")
               ],
               [
-                Button.url("𝙾𝚡𝚢𝚐𝚎𝙽", "https://t.me/PRADHAN474"),
-                Button.url("🥀 𝚂𝚞𝚙𝚙𝚘𝚛𝚃 🥀", "https://t.me/BWANDARLOK")
+                Button.url("💘 𝙾𝚡𝚢𝚐𝚎𝙽 💘", "https://t.me/PRADHAN474"),
+                Button.url("💫 𝚂𝚞𝚙𝚙𝚘𝚛𝚃 💫", "https://t.me/BWANDARLOK")
               ]
             ]
           )
@@ -161,7 +161,7 @@ async def help_spam(event):
               buttons=[[Button.inline("< Back", data="help_back"),],],
               ) 
     else:
-        await event.answer("𝙾𝚇𝚈𝙶𝙴𝙽 𝚂𝙴 𝙹𝙰 𝙺𝙴 𝚂𝚄𝙳𝙾 𝙻𝙴𝙻𝙾 @PRADHAN474", cache_time=0, alert=True)
+        await event.answer("𝙾𝚇𝚈𝙶𝙴𝙽 𝚂𝙴 𝙹𝙰 𝙺𝙴 𝚂𝚄𝙳𝙾 𝙻𝙴𝙻𝙾 @PRADHAN474 💖", cache_time=0, alert=True)
 
 
 @X1.on(events.CallbackQuery(pattern=r"raid"))
@@ -180,7 +180,7 @@ async def help_raid(event):
             buttons=[[Button.inline("< Back", data="help_back"),],],
           )
     else:
-        await event.answer("𝙾𝚇𝚈𝙶𝙴𝙽 𝚂𝙴 𝙹𝙰 𝙺𝙴 𝚂𝚄𝙳𝙾 𝙻𝙴𝙻𝙾 @PRADHAN474", cache_time=0, alert=True)
+        await event.answer("𝙾𝚇𝚈𝙶𝙴𝙽 𝚂𝙴 𝙹𝙰 𝙺𝙴 𝚂𝚄𝙳𝙾 𝙻𝙴𝙻𝙾 @PRADHAN474 💖", cache_time=0, alert=True)
 
 
 @X1.on(events.CallbackQuery(pattern=r"extra"))
@@ -199,4 +199,4 @@ async def help_extra(event):
             buttons=[[Button.inline("< Back", data="help_back"),],],
             )
     else:
-        await event.answer("𝙾𝚇𝚈𝙶𝙴𝙽 𝚂𝙴 𝙹𝙰 𝙺𝙴 𝚂𝚄𝙳𝙾 𝙻𝙴𝙻𝙾 @PRADHAN474", cache_time=0, alert=True)
+        await event.answer("𝙾𝚇𝚈𝙶𝙴𝙽 𝚂𝙴 𝙹𝙰 𝙺𝙴 𝚂𝚄𝙳𝙾 𝙻𝙴𝙻𝙾 @PRADHAN474 💖", cache_time=0, alert=True)
