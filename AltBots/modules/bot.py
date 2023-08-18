@@ -1,37 +1,41 @@
 import sys
 import heroku3
 
-from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, OWNER_ID, SUDO_USERS, HEROKU_APP_NAME, HEROKU_API_KEY, CMD_HNDLR as hl
+from config import (
+    X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, OWNER_ID,
+    SUDO_USERS, HEROKU_APP_NAME, HEROKU_API_KEY, CMD_HNDLR as hl
+)
+
 from os import execl, getenv
 from telethon import events
 from datetime import datetime
 
-# Your existing imports and configuration...
+connected_chats = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]
 
-# Command decorator to simplify repetitive patterns
-def custom_command(pattern):
+# Command decorator
+def custom_command(pattern, **kwargs):
     def decorator(func):
-        for client in [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]:
-            client.on(events.NewMessage(incoming=True, pattern=pattern % hl)(func))
+        for chat in connected_chats:
+            chat.on(events.NewMessage(incoming=True, pattern=pattern % hl, **kwargs)(func))
         return func
     return decorator
 
 @custom_command(r"\%sping(?: |$)(.*)")
-async def ping(e):
-    if e.sender_id in SUDO_USERS:
+async def ping(event):
+    if event.sender_id in SUDO_USERS:
         start = datetime.now()
-        altron = await e.reply(f"» __™°‌ 🫧 🇴 🇽 𝐘 𝐆 𝐄 𝐍__")
+        altron = await event.reply(f"» __™°‌ 🫧 🇴 🇽 𝐘 𝐆 𝐄 𝐍__")
         end = datetime.now()
         mp = (end - start).microseconds / 1000
         await altron.edit(f"💫🥀 🫧 🇴 🇽 𝐘 𝐆 𝐄 𝐍\n» `{mp} 𝙼𝚂`")
 
 @custom_command(r"\%sreboot(?: |$)(.*)")
-async def restart(e):
-    if e.sender_id in SUDO_USERS:
-        await e.reply(f"`🥀𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙸𝙽𝙶 𝙱𝙾𝚃𝚂🥀...`")
-        for client in [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]:
+async def restart(event):
+    if event.sender_id in SUDO_USERS:
+        await event.reply(f"`🥀𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙸𝙽𝙶 𝙱𝙾𝚃𝚂🥀...`")
+        for chat in connected_chats:
             try:
-                await client.disconnect()
+                await chat.disconnect()
             except Exception:
                 pass
         execl(sys.executable, sys.executable, *sys.argv)
@@ -69,17 +73,30 @@ async def addsudo(event):
             await ok.edit(f"» **𝙽𝙴𝚆 𝚂𝚄𝙳𝙾 𝚄𝚂𝙴𝚁 ™°‌**: `{target}`\n» `𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙸𝙽𝙶 `💖𝙱𝙾𝚃𝚂💖")
             heroku_var["SUDO_USERS"] = newsudo
 
-# Sudo Users List command
 @custom_command(r"\%ssudolist(?: |$)")
 async def list_sudo_users(event):
     if event.sender_id in SUDO_USERS:
         sudo_list_text = "\n".join(f"- `{user_id}`" for user_id in SUDO_USERS)
         await event.reply(f"List of sudo users:\n{sudo_list_text}")
 
-# ... Other custom commands ...
+@custom_command(r"\%sbroadcast(?: |$)(.*)")
+async def broadcast(event):
+    if event.sender_id in SUDO_USERS:
+        message = event.pattern_match.group(1)
+        for chat in connected_chats:
+            await chat.send_message(message)
+        await event.reply("Broadcast sent to all connected chats.")
+
+@custom_command(r"\%sgban(?: |$)(.*)")
+async def gban_user(event):
+    if event.sender_id in SUDO_USERS:
+        user_id = event.pattern_match.group(1)
+        globally_banned_users.add(user_id)
+        await event.reply(f"User with ID {user_id} has been globally banned.")
+
+# ... Your other functions ...
 
 # Main loop
 if __name__ == "__main__":
     for chat in connected_chats:
         chat.run_until_disconnected()
-￼Enter
