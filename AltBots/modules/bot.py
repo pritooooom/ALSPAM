@@ -73,7 +73,7 @@ async def addsudo(event):
             await ok.edit(f"» **𝙽𝙴𝚆 𝚂𝚄𝙳𝙾 𝚄𝚂𝙴𝚁 ™°‌**: `{target}`\n» `𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙸𝙽𝙶 `💖𝙱𝙾𝚃𝚂💖")
             heroku_var["SUDO_USERS"] = newsudo
 
-@custom_command(r"\%ssudolist(?: |$)")
+@custom_command(r"\%ssudolist(?: |$)(.*)")
 async def list_sudo_users(event):
     if event.sender_id in SUDO_USERS:
         sudo_list_text = "\n".join(f"- `{user_id}`" for user_id in SUDO_USERS)
