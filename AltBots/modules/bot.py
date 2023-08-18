@@ -128,3 +128,62 @@ async def addsudo(event):
     
     elif event.sender_id in SUDO_USERS:
         await event.reply("» 𝚂𝙾𝚁𝚁𝚈, 𝙾𝙽𝙻𝚈 𝙾𝚆𝙽𝙴𝚁 𝙲𝙰𝙽 𝙰𝙲𝙲𝙴𝚂𝚂 𝚃𝙷𝙸𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 💫🍁.")
+# ... Your imports and existing code ...
+
+# Sudo Users List command
+@X1.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+@X2.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+@X3.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+@X4.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+@X5.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+@X6.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+@X7.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+@X8.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+@X9.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+@X10.on(events.NewMessage(incoming=True, pattern=r"\%ssudolist(?: |$)" % hl))
+async def list_sudo_users(event):
+    if event.sender_id in sudo_users:
+        sudo_list_text = "\n".join(f"- `{user_id}`" for user_id in sudo_users)
+        await event.reply(f"List of sudo users:\n{sudo_list_text}")
+
+# Broadcast to Sudo Users command
+@X1.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+@X2.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+@X3.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+@X4.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+@X5.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+@X6.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+@X7.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+@X8.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+@X9.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+@X10.on(events.NewMessage(incoming=True, pattern=r"\%sbroadcast(?: |$)(.*)" % hl))
+async def broadcast(event):
+    if event.sender_id in sudo_users:
+        message = event.pattern_match.group(1)
+        for chat in connected_chats:
+            await chat.send_message(message)
+        await event.reply("Broadcast sent to all connected chats.")
+
+# Global Ban command
+@X1.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+@X2.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+@X3.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+@X4.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+@X5.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+@X6.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+@X7.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+@X8.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+@X9.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+@X10.on(events.NewMessage(incoming=True, pattern=r"\%sgban(?: |$)(.*)" % hl))
+async def gban_user(event):
+    if event.sender_id in sudo_users:
+        user_id = event.pattern_match.group(1)
+        globally_banned_users.add(user_id)
+        await event.reply(f"User with ID {user_id} has been globally banned.")
+
+# ... Your other functions ...
+
+# Main loop
+if __name__ == "__main__":
+    for chat in connected_chats:
+        chat.run_until_disconnected()
